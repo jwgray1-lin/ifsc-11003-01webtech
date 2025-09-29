@@ -1,44 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Declares Language -->
 
 <head>
   <title>University of Arkansas at Little Rock</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Overview of the University of Arkansas at Little Rock" />
+  <meta name="description"
+    content="Learn about the University of Arkansas at Little Rock, including its history, academics, student life, athletics, and more." />
   <meta name="author" content="John Gray" />
+  <meta name="keywords"
+    content="University of Arkansas at Little Rock, UA Little Rock, Little Rock University, Arkansas colleges, academics, student life, campus living, athletics, Trojans, Bowen School of Law, Donaghey College" />
   <link href="path/to/style.css" rel="stylesheet" />
 </head>
 
 <body>
   <main>
     <header class="primary">
-      <h1>University of Arkansas at Little Rock: A Brief History</h1>
+      <h1>University of Arkansas at Little Rock</h1>
+      <p>A Public Research University in the Heart of Arkansas</p>
     </header>
 
-    <section id="content">
+    <section id="form">
+      <h2>Personal Information Form</h2>
+      <form action="processing-script.php" method="post">
+        <fieldset>
+          <legend>Personal Information</legend>
+
+          <label for="custname">Name:</label>
+          <input type="text" id="custname" name="custname" />
+
+          <label for="address">Address:</label>
+          <textarea id="address" name="address"></textarea>
+
+          <label for="favcol">Favorite Color:</label>
+          <select id="favcol" name="favcol">
+            <option value="" selected disabled>---</option>
+            <option value="R">Red</option>
+            <option value="B">Blue</option>
+            <option value="G">Green</option>
+          </select>
+
+          <!-- Data List Example -->
+          <label for="browser">Choose or add a browser:</label>
+          <input list="browsers" id="browser" name="browser">
+          <datalist id="browsers">
+            <option value="Chrome">
+            <option value="Firefox">
+            <option value="Safari">
+            <option value="Edge">
+            <option value="Opera">
+          </datalist>
+
+          <input type="submit" value="Submit" />
+        </fieldset>
+      </form>
+    </section>
+
+    <section id="history">
       <h2>History</h2>
       <p>
-        The University of Arkansas at Little Rock (UA Little Rock) is a public research university in Little Rock,
-        Arkansas. Established as Little Rock Junior College by the Little Rock School District in 1927, the institution
-        became a private four-year university under the name Little Rock University in 1957. It returned to public status
-        in 1969 when it merged with the University of Arkansas System under its present name. The former campus of Little
-        Rock Junior College is now the campus of Philander Smith University.
+        The University of Arkansas at Little Rock (UA Little Rock) was founded in 1927 as Little Rock Junior College.
+        Initially created by the Little Rock School District, it became a private four-year university in 1957 under the
+        name Little Rock University. In 1969, the institution joined the University of Arkansas System and adopted its
+        current name. Today, the campus spans 250 acres with more than 56 academic and research buildings.
       </p>
-      <p>
-        At 250 acres (100 ha), the UA Little Rock campus encompasses more than 56 buildings, including the Center for
-        Nanotechnology Integrative Sciences, the Emerging Analytics Center, the Sequoyah Research Center, and the
-        Ottenheimer Library. Additionally, UA Little Rock houses special learning facilities that include a learning
-        resource center, art galleries, KUAR public radio station, University Television, and a campus-wide wireless
-        network. It is classified among "R2: Doctoral Universities – High research activity".
-      </p>
+    </section>
 
+    <section id="academics">
       <h2>Academics</h2>
       <p>
-        The university features more than 100 undergraduate degrees and 60 graduate degrees, including graduate
-        certificates, master's degrees, and doctorates, through both traditional and online courses. Students attend
-        classes in one of the university's three new colleges and a law school:
+        UA Little Rock offers over 100 undergraduate and 60 graduate programs, including graduate certificates,
+        master’s, and doctoral degrees. Students take courses both on campus and online across the following academic
+        divisions:
       </p>
       <ul>
         <li>College of Business, Health, and Human Services</li>
@@ -46,9 +79,17 @@
         <li>Donaghey College of Science, Technology, Engineering, and Mathematics</li>
         <li>William H. Bowen School of Law</li>
       </ul>
+    </section>
 
+    <section id="student-life">
       <h2>Student Life</h2>
-      <p>Student body composition as of May 2, 2022:</p>
+      <p>
+        Life at UA Little Rock is enriched through student organizations, cultural events, and leadership opportunities.
+        The university supports intramural sports, diversity programs, student government, peer mentoring, and a
+        student-run newspaper. The campus’s location in Little Rock gives students access to internships, cultural
+        venues, and career opportunities.
+      </p>
+      <h3>Student Demographics (2022)</h3>
       <ul>
         <li>White – 48%</li>
         <li>Black – 27%</li>
@@ -58,50 +99,34 @@
         <li>Asian – 2%</li>
         <li>Native American – 1%</li>
       </ul>
-      <p>
-        Student life at UA Little Rock is characterized by student-run organizations and affiliation groups that support
-        social, academic, athletic, and religious activities. Services offered include intramural sports and fitness
-        programs, diversity programs, leadership development, peer tutoring, student government association, student
-        support programs for non-traditional and first-generation students, a student-run newspaper, and fraternity and
-        sorority life. The campus’s proximity to downtown Little Rock also provides access to recreational, educational,
-        internship, and employment opportunities unique within Arkansas.
-      </p>
+    </section>
 
+    <section id="campus-living">
       <h2>Campus Living</h2>
       <p>
-        UA Little Rock provides a variety of on-campus living options, from traditional residence halls to multi-bedroom
-        apartments. The university has four residence halls and the University Village Apartment Complex. Six learning
-        communities focusing on criminal justice, arts and culture, careers, business innovation, nursing, and STEM are
-        available to students.
+        UA Little Rock offers four residence halls and the University Village Apartment Complex, providing students with
+        both traditional dorms and apartment-style living. Specialized learning communities in areas such as STEM,
+        business innovation, nursing, and arts and culture help students connect academically and socially.
       </p>
+    </section>
 
+    <section id="athletics">
       <h2>Athletics</h2>
       <p>
-        UA Little Rock's 14 athletic teams are known as the Little Rock Trojans, with most participating in the Sun Belt
-        Conference. The university does not sponsor football and last fielded a football team in 1955 when it was known
-        as Little Rock Junior College. The main athletic offices are in the Jack Stephens Center.
+        Known as the Little Rock Trojans, UA Little Rock competes in 14 NCAA Division I sports. While the school does
+        not sponsor football, it offers a wide variety of programs including basketball, baseball, volleyball, golf,
+        soccer, cross country, track and field, swimming and diving, and wrestling.
       </p>
-      <p>Sports offered include:</p>
-      <ul>
-        <li>Baseball</li>
-        <li>Men’s and Women’s Basketball</li>
-        <li>Men’s and Women’s Golf</li>
-        <li>Women’s Volleyball</li>
-        <li>Women’s Soccer</li>
-        <li>Women’s Swimming/Diving</li>
-        <li>Men’s and Women’s Cross Country</li>
-        <li>Men’s and Women’s Track and Field (Indoor and Outdoor)</li>
-        <li>Men’s Wrestling</li>
-      </ul>
       <p>
-        Two teams compete outside the Sun Belt: women’s swimming and diving (Missouri Valley Conference) and wrestling
-        (Pac-12 Conference). Wrestling began in 2019 as the first Division I program in Arkansas. UA Little Rock will
-        join the Ohio Valley Conference for the 2022–23 season.
+        The Trojans primarily compete in the Sun Belt Conference but will transition to the Ohio Valley Conference
+        beginning in the 2022–23 season.
       </p>
+    </section>
 
+    <section id="archives">
       <h2>Collections and Archives</h2>
       <p>
-        On July 1, 2014, the UA Little Rock Collections and Archives division was created. The division includes:
+        The UA Little Rock Collections and Archives division, created in 2014, includes:
       </p>
       <ul>
         <li>Ottenheimer Library</li>
@@ -110,9 +135,21 @@
       </ul>
     </section>
 
+    <nav class="primary">
+      <ul>
+        <li><a href="#history">History</a></li>
+        <li><a href="#academics">Academics</a></li>
+        <li><a href="#student-life">Student Life</a></li>
+        <li><a href="#campus-living">Campus Living</a></li>
+        <li><a href="#athletics">Athletics</a></li>
+        <li><a href="#archives">Collections</a></li>
+      </ul>
+    </nav>
+
     <footer class="primary">
       <p>&copy; 2025 University of Arkansas at Little Rock | <a href="#top">Back to Top</a></p>
     </footer>
   </main>
 </body>
+
 </html>
