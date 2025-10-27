@@ -1,68 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Positioning Lab</title>
-  <style type="text/css">
-    /* ---------------Box Sizing----------------- */
-    html {
-      box-sizing: border-box;
-    }
-    *,
-    *:before,
-    *:after {
-      box-sizing: inherit;
-    }
+  <style>
+    /* ---------- Base / Reset ---------- */
+    html { box-sizing: border-box; }
+    *, *::before, *::after { box-sizing: inherit; }
     body {
-      background-color: #ECECEC;
-      font-weight: bold;
-      font-family: Tahoma, Geneva, sans-serif;
-      color: #FFF;
-      text-align: center;
-      line-height: 24px;
+      background:#ECECEC;
+      font: bold 16px/24px Tahoma, Geneva, sans-serif;
+      color:#FFF;
+      text-align:center;
+      margin:0;
     }
+
+    /* ---------- Layout ---------- */
+    h1 {
+      color:#000;
+      font-weight:normal;
+      padding:50px 0 20px;
+      margin:0;
+    }
+
     #wrapper {
-      background-color: #FFF;
-      border: 1px solid #c0c0c0;
-      width: 800px;
-      margin-right: auto;
-      margin-left: auto;
+      width: 800px;               /* wider to match the mock */
+      margin: 0 auto 50px;
+      background:#FFF;
+      border:1px solid #c0c0c0;
+      padding: 24px;              /* white inset margin seen in the mock */
       text-shadow: 2px 2px #000;
     }
-    #navy {
-      background-color: #001f3f;
+
+    /* Two-column float grid with gutters */
+    .tile {
+      float: left;
+      width: 48%;                 /* two columns */
+      margin: 0 1% 24px;          /* side gutters + row gap */
+      height: 170px;              /* block height like the mock */
+      border-radius: 2px;
     }
-    #teal {
-      background-color: #39CCCC;
-    }
-    #blue {
-      background-color: #0074D9;
-    }
-    #aqua {
-      background-color: #7FDBFF;
-    }
+
+    #navy { background:#001f3f; }
+    #teal { background:#39CCCC; }
+    #blue { background:#0074D9; }
+    #aqua { background:#7FDBFF; }
+
+    /* Full-width footer bar under the grid */
     #footer {
-      background-color: #666;
-    }
-    h1 {
-      color: #000;
-      font-weight: normal;
-      padding: 50px;
+      clear: both;                /* drop below the floated tiles */
+      background:#666;
+      height: 40px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin: 0 1%;               /* align with tile side gutters */
+      border-radius: 2px;
     }
   </style>
 </head>
 <body>
   <h1>Float-1</h1>
+
   <section id="wrapper">
-    <div id="navy">Navy</div>
-    <div id="teal">Teal</div>
-    <div id="blue">Blue</div>
-    <div id="aqua">Aqua</div>
+    <div id="navy" class="tile">Navy</div>
+    <div id="teal" class="tile">Teal</div>
+    <div id="blue" class="tile">Blue</div>
+    <div id="aqua" class="tile">Aqua</div>
     <div id="footer">Footer</div>
   </section>
 </body>
-
 </html>
