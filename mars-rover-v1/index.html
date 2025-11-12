@@ -12,7 +12,7 @@
   <meta name="author" content="John Gray">
 
   <!-- External CSS -->
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body id="top">
   <!-- Skip link for accessibility -->
@@ -146,31 +146,44 @@
       </div>
     </section>
 
-    <!-- Small "What’s on this site" summary -->
-    <section class="site-summary" aria-labelledby="site-summary-heading">
-      <h2 id="site-summary-heading">What You’ll Find on This Site</h2>
-      <ul>
-        <li><strong>Home:</strong> Big-picture overview of NASA’s Mars rover program (this page).</li>
-        <li><strong><a href="mission-history.html">Mission History</a>:</strong> Launch dates, landing sites, and key milestones for each rover.</li>
-        <li><strong><a href="faq.html">FAQ</a>:</strong> Answers to common questions about Mars, rovers, and robotic exploration.</li>
-      </ul>
+    <!-- Brief history section: expanded content about rover program -->
+    <section class="rover-history" aria-labelledby="rover-history-heading">
+      <h2 id="rover-history-heading">A Brief History of Mars Rovers</h2>
+      <p>
+        The history of Mars rovers began with small, experimental landers and evolved into sophisticated
+        mobile laboratories. Early missions tested basic landing technologies and returned the first close-up
+        imagery of the Martian surface. Over time, rovers grew larger and more capable: the twin Mars
+        Exploration Rovers, <em>Spirit</em> and <em>Opportunity</em>, arrived in 2004 and dramatically
+        outlived their planned 90-sol missions, returning rich geological evidence of ancient water activity.
+      </p>
+      <p>
+        Later, the larger Curiosity rover (landed 2012) carried an extensive suite of instruments to analyze
+        rock chemistry and evaluate past habitability. In 2021, Perseverance touched down with ambitions to
+        collect and cache samples for eventual return to Earth, and it carried the Ingenuity helicopter,
+        demonstrating powered flight on another planet.
+      </p>
+      <p>
+        Throughout these missions, engineers and scientists refined landing, mobility, and autonomy technologies,
+        enabling longer traverses, faster decision-making, and higher-value science. The mission-history page
+        contains timelines and detailed milestones for each rover if you want to dig deeper.
+      </p>
+      <p>
+        Future exploration will build on these successes: sample return campaigns, advanced surface platforms,
+        and preparations for eventual human exploration of Mars.
+      </p>
     </section>
   </main>
 
   <footer class="site-footer" role="contentinfo">
-    <p>
-      This website was created as a student project for educational purposes.
-      NASA is not affiliated with or endorsing this work.
-    </p>
-    <address>
-      Contact the site creator:
-      <a href="mailto:john.gray@example.edu">john.gray@example.edu</a>
-    </address>
     <p class="small-print">
       Images and mission data adapted from NASA public domain resources where applicable.
     </p>
-  <p class="author">Author: John Gray</p>
-    <p><a class="back-to-top" href="#top" aria-label="Back to top">Back to top ↑</a></p>
+
+    <div class="footer-bar" aria-hidden="false">
+      <span class="copyright">© 2025 University of Arkansas at Little Rock</span>
+      <span class="author">Author: John Gray</span>
+      <span class="back-link"><a class="back-to-top" href="#top" aria-label="Back to top">Back to top ↑</a></span>
+    </div>
   </footer>
 
   <!-- Simple dark mode toggle script (bonus feature) -->

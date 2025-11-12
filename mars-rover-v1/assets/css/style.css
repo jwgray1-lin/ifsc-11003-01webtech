@@ -1,0 +1,204 @@
+
+/* Mars Rover - adapted style.css
+	 Based on the user's provided CSS (header.primary example), adapted to
+	 work with mars-rover-v1/index.html selectors (.site-header, .hero, .rover-grid)
+*/
+
+/*  ---------------Box Sizing----------------- */
+html { box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
+
+/*  ---------------Utility Classes----------------- */
+.container{
+	width: 80vw;
+	max-width:960px;
+	margin: 40px auto;
+}
+.img-right{ float:right;  border: 3px double #ccc; padding:5px; border-radius:5px; margin: 10px 0 10px 20px; }
+.img-left{ float:left;  border: 3px double #ccc; padding:5px; border-radius:5px; margin: 10px 20px 10px 0; }
+.img-center{ display:block; margin: 10px auto; border: 3px double #ccc; padding:5px; border-radius:5px; }
+
+/*  ---------------Responsive Images----------------- */
+img{ max-width:100%; height:auto }
+
+/*  ---------------Global Styles----------------- */
+body {
+	margin:0;
+	font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	/* subtle space gradient */
+	background: radial-gradient(circle at 10% 20%, #0b2540 0%, transparent 25%),
+							linear-gradient(180deg,#071426 0%, #031021 100%);
+	color:var(--text, #e6eef6);
+	-webkit-font-smoothing:antialiased;
+}
+
+/* Header: support both header.primary and .site-header (Mars Rover HTML uses .site-header) */
+header.primary, .site-header{
+	background: linear-gradient(90deg,#031f3a 0%, #05223f 100%);
+	color:#ffffff;
+	padding:20px 1rem;
+}
+header.primary .branding, .site-header .branding{display:flex;align-items:center;gap:1rem}
+header.primary .title-group h1, .site-header .title-group h1{margin:0}
+
+/* Hero and cards (improved visuals) */
+.hero{display:grid;grid-template-columns:1fr 380px;gap:1.25rem;align-items:center;padding:1.5rem 0}
+.hero-text{max-width:56ch}
+.hero-text h2{color:#FFB703;margin:0 0 .5rem 0}
+.hero-image img{border-radius:10px;box-shadow:0 10px 30px rgba(2,6,23,0.6);}
+
+.rover-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.25rem}
+.rover-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.03);transition:transform .18s ease,box-shadow .18s ease}
+.rover-card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(2,6,23,0.6)}
+.rover-card h3{margin:.25rem 0;color:#7fd3ff}
+.rover-card img{width:100%;height:auto;border-radius:8px;display:block}
+.rover-tagline{color:#9aa6b2;margin:.5rem 0}
+.rover-facts{margin:0;padding-left:1rem;color:#9aa6b2;font-size:.95rem}
+
+/* Footer improvements */
+.site-footer{padding:28px 1rem;background:linear-gradient(180deg,#072f2b,#0b483f);color:#dff6f0}
+.site-footer address, .site-footer p{ margin:.4rem 0 }
+.site-footer .author{ font-weight:700; color:#ffffff }
+.site-footer .small-print{color:rgba(255,255,255,0.8);font-size:.95rem}
+
+/* Footer bar: compact copyright / author / back-to-top */
+.site-footer .footer-bar{
+	display:flex;
+	gap:1rem;
+	align-items:center;
+	justify-content:space-between;
+	margin-top:0.75rem;
+	padding-top:0.75rem;
+	border-top:1px solid rgba(255,255,255,0.04);
+	flex-wrap:wrap;
+	font-size:0.95rem;
+	color:rgba(255,255,255,0.9);
+}
+.site-footer .footer-bar .author{ font-weight:600; }
+.site-footer .footer-bar .back-link a{ color:#FFB703; text-decoration:none }
+.site-footer .footer-bar .back-link a:hover{ text-decoration:underline }
+
+/* header text */
+header.primary h1, .site-header .title-group h1{
+	font-size:2.4rem;
+	color:#ffffff;
+	margin: 20px 0 0;
+}
+header.primary a, .site-header a{ color:#ffffff; text-decoration:none; }
+header.primary h2{ font-size:1.3rem; letter-spacing:.3px; margin:0; }
+
+/* nav styles (works for header.primary nav and .main-nav) */
+header.primary nav ul, .main-nav ul{
+	padding:0;
+	display:flex;
+	gap:0.5rem;
+	align-items:center;
+	margin:0;
+}
+header.primary nav li, .main-nav li{ list-style-type:none; }
+header.primary nav a, .main-nav a{
+	color:#ffffff;
+	font-size:.95rem;
+	padding:.4rem .75rem;
+	border-radius:8px;
+	text-decoration:none;
+	transition:all .18s ease;
+}
+.main-nav a:hover, .main-nav a[aria-current="page"]{
+	background:rgba(255,255,255,0.06);
+	transform:translateY(-2px);
+}
+
+/* #intro usage: if present */
+#intro h2{ color:#FFB703; border-bottom: 1px dotted #c0c0c0; }
+
+/* content area: stack main sections vertically for better readable measure */
+#content, .site-main{
+	display:flex;
+	flex-direction:column;
+	gap:20px;
+	align-items:stretch;
+}
+.site-main .post, #content .post{
+	box-shadow: 0 4px 8px rgba(0,0,0, 0.6);
+	padding:10px;
+	font-size:.9rem;
+}
+
+/* Paragraph and text-flow improvements: set a comfortable measure and enable hyphenation/wrapping */
+.site-main p,
+.site-main article p,
+.hero-text p,
+.rover-card p,
+.program-goals p,
+.site-summary p,
+.site-footer p,
+.site-footer address{
+	max-width:65ch;
+	line-height:1.6;
+	margin:0 0 1rem 0;
+	overflow-wrap:break-word;
+	word-break:normal;
+	hyphens:auto;
+	white-space:normal;
+}
+
+/* Smaller measures for card taglines so they don't run too long inside narrow cards */
+.rover-card .rover-tagline{ max-width:48ch; }
+figure{ margin:0 }
+#content time, figcaption{ text-transform:uppercase; font-size:.6rem; }
+
+/* Links */
+#content a, .site-main a{ color:#FFB703; }
+
+/* Practice section accents (if present) */
+#practice h2{ color: #0EA5A3; border-bottom:1px dotted #cccccc; }
+#practice a:link, #practice a:visited { color: #0EA5A3; }
+#practice h3{ border-left:7.5px solid #0EA5A3; padding:5px 0 5px 7.5px; }
+
+/* Table styles */
+table{ width:100%; border:1px solid #c0c0c0; border-collapse:collapse; }
+caption{ font-weight: bold; margin: 10px; font-size:1.3rem; }
+tr:nth-child(even){ background-color: rgba(14, 165, 163, 0.10); }
+td:nth-child(n+2){ text-align:right; }
+tr:hover{ background-color: rgba(255, 183, 3, 0.25); }
+th{ background-color: #0B2545; color:#ffffff; padding:7.5px; }
+td{ border:1px solid #c0c0c0; padding:5px; }
+
+#practice ol{ list-style-type:lower-roman; }
+#practice ul ul { color:red; }
+#practice ul ul ul{ color:black; }
+#practice dt{ font-weight:700; }
+#practice dd{ margin:0; }
+dd + dt{ margin-top:20px; }
+
+/* Blockquote */
+#practice blockquote{
+	border: 4px double #c0c0c0;
+	padding:20px 40px;
+	margin:40px 80px;
+	border-radius:30px 0;
+	background-color: #FFB703; color:#172635; text-shadow:none;
+}
+#practice blockquote cite{ display:block; font-size:.8rem; text-align:right; margin-top:20px; }
+
+/* Sidebar */
+aside[role="complementary"]{ background-color: #0B2545; color:#ffffff; padding:40px 0; }
+aside .container{ display:flex; flex-direction:row; justify-content:center; gap:40px; }
+aside .container a{ color:#ffffff; }
+article.widget footer{ display:none; }
+
+/* Footer / colophon (colophon kept for compatibility) */
+#colophon{ background-color: #0EA5A3; color:#ffffff; text-align:center; padding:10px; text-shadow:1px 1px #000000; }
+/* .site-footer styles defined earlier */
+
+/* utility: back to top */
+.back-to-top{ display:inline-block; margin-top:.5rem; color:#061826; text-decoration:none }
+
+/* Header / nav responsive */
+@media screen and (max-width:500px){
+	header.primary nav ul, .site-header nav ul{ flex-direction:column; gap:10px; }
+	header.primary nav a, .main-nav a { display:block; }
+	#content, .site-main{ flex-direction:column; }
+}
+
