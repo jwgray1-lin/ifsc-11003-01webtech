@@ -1,4 +1,4 @@
-(function(){})()
+// (Removed stray empty IIFE that broke script execution)
 // mars-rover-v1/assets/js/faq.js
 // Client-side Q&A assistant moved to external file for reliability.
 /*
