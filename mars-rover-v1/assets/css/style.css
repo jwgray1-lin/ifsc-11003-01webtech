@@ -1,3 +1,57 @@
+/* Contact form enhancements */
+.contact-form {
+	background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+	border-radius: 14px;
+	box-shadow: 0 6px 32px rgba(2,6,23,0.18);
+	padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+	max-width: 480px;
+	margin: 2.5rem auto 1.5rem auto;
+	border: 1.5px solid rgba(255,255,255,0.06);
+	display: flex;
+	flex-direction: column;
+	gap: 1.1rem;
+}
+.contact-form label {
+	font-weight: 600;
+	margin-bottom: 0.2rem;
+	color: #7fd3ff;
+	letter-spacing: 0.02em;
+}
+.contact-form input,
+.contact-form textarea {
+	width: 100%;
+	padding: 0.7rem 0.9rem;
+	border-radius: 7px;
+	border: 1.5px solid rgba(255,255,255,0.10);
+	background: rgba(255,255,255,0.04);
+	color: #e6eef6;
+	font-size: 1rem;
+	margin-bottom: 0.2rem;
+	transition: border-color 0.18s, box-shadow 0.18s;
+	box-sizing: border-box;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+	outline: none;
+	border-color: #FFB703;
+	box-shadow: 0 0 0 2px #FFB70344;
+}
+.contact-form textarea {
+	min-height: 120px;
+	resize: vertical;
+}
+.form-actions {
+	display: flex;
+	gap: 0.7rem;
+	justify-content: flex-end;
+	margin-top: 0.5rem;
+}
+.contact-status {
+	min-height: 1.2em;
+	font-size: 1.05rem;
+	text-align: center;
+	margin-top: 1.1rem;
+}
 
 /* Mars Rover - adapted style.css
 	 Based on the user's provided CSS (header.primary example), adapted to
@@ -10,9 +64,10 @@ html { box-sizing: border-box; }
 
 /*  ---------------Utility Classes----------------- */
 .container{
-	width: 80vw;
-	max-width:960px;
-	margin: 40px auto;
+	width: 86vw;
+	max-width:1100px;
+	/* increase vertical spacing to give content more room */
+	margin: 60px auto;
 }
 .img-right{ float:right;  border: 3px double #ccc; padding:5px; border-radius:5px; margin: 10px 0 10px 20px; }
 .img-left{ float:left;  border: 3px double #ccc; padding:5px; border-radius:5px; margin: 10px 20px 10px 0; }
@@ -37,15 +92,25 @@ header.primary, .site-header{
 	background: linear-gradient(90deg,#031f3a 0%, #05223f 100%);
 	color:#ffffff;
 	padding:20px 1rem;
+	/* make header a positioned container for decorative pseudo-elements */
+	position: relative;
+	overflow: hidden;
 }
 header.primary .branding, .site-header .branding{display:flex;align-items:center;gap:1rem}
 header.primary .title-group h1, .site-header .title-group h1{margin:0}
 
 /* Hero and cards (improved visuals) */
-.hero{display:grid;grid-template-columns:1fr 380px;gap:1.25rem;align-items:center;padding:1.5rem 0}
-.hero-text{max-width:56ch}
+.hero{
+	/* Stack hero text above the image (image will appear under the main text) */
+	display:flex;
+	flex-direction:column;
+	gap:1.25rem;
+	align-items:center;
+	padding:1.5rem 0;
+}
+.hero-text{max-width:72ch; padding:0 1rem}
 .hero-text h2{color:#FFB703;margin:0 0 .5rem 0}
-.hero-image img{border-radius:10px;box-shadow:0 10px 30px rgba(2,6,23,0.6);}
+.hero-image img{border-radius:10px;box-shadow:0 10px 30px rgba(2,6,23,0.6);width:100%;max-width:380px;}
 
 .rover-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.25rem}
 .rover-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.03);transition:transform .18s ease,box-shadow .18s ease}
@@ -95,6 +160,46 @@ header.primary nav ul, .main-nav ul{
 	align-items:center;
 	margin:0;
 }
+
+/* ---------- Decorative squiggly lines inside header ---------- */
+/* Two subtle SVG wave lines using pseudo-elements. Tweak color, opacity, position below. */
+.site-header::before,
+.site-header::after{
+	content: "";
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	pointer-events: none;
+	background-repeat: no-repeat;
+	background-size: 160% auto;
+	opacity: 0.10;
+}
+
+/* Upper squiggle: thin white wavy line near the top-left */
+.site-header::before{
+	top: 8px;
+	height: 72px;
+	width: 1200px;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0 60 C150 10 350 110 500 60 C650 10 850 110 1000 60 C1150 10 1200 60 1200 60' stroke='%23ffffff' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+	opacity: 0.09;
+	transform-origin: center;
+}
+
+/* Lower squiggle: thicker, subtle accent near the bottom of header */
+.site-header::after{
+	bottom: 6px;
+	height: 90px;
+	width: 1400px;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1400 140' preserveAspectRatio='none'%3E%3Cpath d='M0 80 C200 20 400 140 600 80 C800 20 1000 140 1200 80 C1300 40 1400 80 1400 80' stroke='%23FFB703' stroke-width='10' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+	opacity: 0.06;
+	background-position: center bottom;
+}
+
+/* Responsive scaling: reduce decorative size on small screens */
+@media (max-width:600px){
+	.site-header::before{ width: 900px; background-size: 220% auto; opacity:0.06 }
+	.site-header::after{ width: 1000px; background-size: 220% auto; opacity:0.04 }
+}
 header.primary nav li, .main-nav li{ list-style-type:none; }
 header.primary nav a, .main-nav a{
 	color:#ffffff;
@@ -126,6 +231,7 @@ header.primary nav a, .main-nav a{
 }
 
 /* Paragraph and text-flow improvements: set a comfortable measure and enable hyphenation/wrapping */
+
 .site-main p,
 .site-main article p,
 .hero-text p,
@@ -134,7 +240,7 @@ header.primary nav a, .main-nav a{
 .site-summary p,
 .site-footer p,
 .site-footer address{
-	max-width:65ch;
+	max-width:72ch;
 	line-height:1.6;
 	margin:0 0 1rem 0;
 	overflow-wrap:break-word;
@@ -142,6 +248,58 @@ header.primary nav a, .main-nav a{
 	hyphens:auto;
 	white-space:normal;
 }
+
+/* ---------- Center main textual content ---------- */
+/* The user wanted headings, messages and body text centered.
+	 We center h2/h3 and paragraph text in the main content and hero,
+	 but we keep structured lists (like .rover-facts) left-aligned for readability. */
+.hero-text,
+.hero-text h2,
+.hero-text p,
+.site-main h2,
+.site-main h3,
+.site-main p,
+.rover-card h3,
+.rover-card .rover-tagline,
+.program-goals h3,
+.program-goals p,
+.rover-history p,
+.site-footer p,
+.site-header .title-group {
+	text-align: center;
+}
+
+/* Ensure fact lists inside cards remain left-aligned for legibility */
+.rover-facts {
+	text-align: left;
+}
+
+/* Slightly center the hero image caption but keep the image itself responsive */
+.hero-image figcaption{ text-align:center; }
+
+/* ---------- Make layout elements centered ---------- */
+/* Center major containers and ensure cards/grid items are centered */
+.site-header .branding{ justify-content:center; flex-direction:column; align-items:center; }
+.main-nav ul{ justify-content:center; }
+.site-main{ align-items:center; }
+.hero{ justify-items:center; }
+.hero-text{ margin:0 auto; }
+.rover-grid{ justify-items:center; justify-content:center; }
+
+/* Make each rover card center its contents */
+.rover-card{ display:flex; flex-direction:column; align-items:center; text-align:center; }
+
+/* Center list blocks but keep list items left-aligned for readability */
+.rover-facts{ display:inline-block; text-align:left; margin:0 auto; }
+
+/* Ensure footer bar elements wrap nicely and remain centered */
+.site-footer .footer-bar{ justify-content:center; text-align:center; }
+
+/* If you truly want every single inline piece centered, uncomment body rule below.
+	Note: this will center everything including small UI bits which may hurt usability.
+	body { text-align: center; }
+*/
+
 
 /* Smaller measures for card taglines so they don't run too long inside narrow cards */
 .rover-card .rover-tagline{ max-width:48ch; }
@@ -182,6 +340,15 @@ dd + dt{ margin-top:20px; }
 }
 #practice blockquote cite{ display:block; font-size:.8rem; text-align:right; margin-top:20px; }
 
+/* Styles for mission updates added to index.html to help fill the page */
+.mission-updates{ width:100%; max-width:920px; margin:40px auto; }
+.mission-updates h2{ text-align:center; color:#FFB703; margin-bottom:0.5rem }
+.updates-list{ display:flex; flex-direction:column; gap:1rem }
+.update{ background: rgba(255,255,255,0.02); padding:1rem; border-radius:8px; border:1px solid rgba(255,255,255,0.03); }
+.update header h3{ margin:0 0 .25rem 0; color:#9fd9ff; text-align:center }
+.update time{ display:block; text-align:center; font-size:.85rem; color:#9aa6b2; margin-bottom:0.5rem }
+.update p{ margin:0; text-align:center }
+
 /* Sidebar */
 aside[role="complementary"]{ background-color: #0B2545; color:#ffffff; padding:40px 0; }
 aside .container{ display:flex; flex-direction:row; justify-content:center; gap:40px; }
@@ -201,4 +368,95 @@ article.widget footer{ display:none; }
 	header.primary nav a, .main-nav a { display:block; }
 	#content, .site-main{ flex-direction:column; }
 }
+
+/* ---------- Mission History: center overview and timeline styles ---------- */
+.history-intro{
+	text-align: center;
+	max-width:72ch;
+	margin: 40px auto;
+}
+
+.timeline{
+	display:flex;
+	flex-direction:column;
+	gap:1.25rem;
+	max-width:980px;
+	margin: 0 auto 40px;
+	padding-left: 1rem;
+}
+
+.timeline-item{
+	position:relative;
+	padding:1.25rem 1rem 1.25rem 1.25rem;
+	border-radius:10px;
+	background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+	border-left:6px solid #FFB703;
+	box-shadow: 0 6px 18px rgba(2,6,23,0.45);
+}
+
+.timeline-item h3{
+	margin:0 0 .25rem 0;
+	color:#FFB703;
+	text-align:center;
+}
+
+.timeline-item time{
+	display:block;
+	text-align:center;
+	color:#9aa6b2;
+	font-size:.95rem;
+	margin-bottom:.5rem;
+}
+
+.timeline-item p{ text-align:center; margin:0 }
+
+/* small dot marker to the left of each item */
+.timeline-item::before{
+	content:"";
+	position:absolute;
+	left:-14px;
+	top:20px;
+	width:14px;
+	height:14px;
+	border-radius:50%;
+	background:#FFB703;
+	box-shadow:0 0 0 6px rgba(255,183,3,0.06);
+}
+
+@media (min-width:900px){
+	/* On wider screens, give timeline items slightly larger padding */
+	.timeline-item{ padding:1.5rem 1.25rem 1.5rem 1.5rem }
+}
+
+/* FAQ details/summary styling */
+.faq details{
+	background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.015));
+	border:1px solid rgba(255,255,255,0.03);
+	padding:0.9rem 1rem;
+	margin:0.6rem 0;
+	border-radius:8px;
+}
+.faq summary{
+	font-weight:700;
+	cursor:pointer;
+	list-style:none;
+	outline:none;
+}
+.faq details[open]{ box-shadow:0 8px 24px rgba(2,6,23,0.45); }
+.faq summary::-webkit-details-marker{ display:none }
+.faq p{ margin:.5rem 0 0 0; }
+
+/* Ask/QA widget styles */
+.ask-section{ margin-top:2rem; }
+.ask-form textarea{ width:100%; resize:vertical; padding:.6rem; border-radius:6px; border:1px solid rgba(255,255,255,0.06); background:rgba(255,255,255,0.015); color:inherit }
+.ask-actions{ margin-top:.6rem; display:flex; gap:.6rem; }
+.btn.alt{ background:transparent; border:1px solid rgba(255,255,255,0.06); }
+.qa-feed{ margin-top:1rem; display:flex; flex-direction:column; gap:.8rem }
+.qa-item{ padding:.8rem; border-radius:8px; background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.012)); border:1px solid rgba(255,255,255,0.03) }
+.qa-item .question{ margin-bottom:.4rem; font-weight:700 }
+.qa-item .answer{ color:#dff6f0 }
+.qa-item .meta{ margin-top:.4rem; font-size:.85rem; color:#9aa6b2 }
+
+.visually-hidden{ position:absolute !important; height:1px; width:1px; overflow:hidden; clip:rect(1px,1px,1px,1px); white-space:nowrap }
+
 

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Mars Rover FAQ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Frequently asked questions about the Mars Rover site and missions.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body id="top">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="branding">
+      <img src="assets/img/nasa-logo.png" alt="NASA logo" class="logo">
+      <div class="title-group">
+        <h1>FAQ — Mars Rover Site</h1>
+        <p class="tagline">Common questions about this site and Mars rover missions</p>
+      </div>
+    </div>
+
+    <nav class="main-nav" role="navigation" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="mission-history.html">Mission History</a></li>
+        <li><a href="faq.html" aria-current="page">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" class="site-main container" role="main">
+    <section class="faq" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">Frequently Asked Questions</h2>
+      <p>Below are some common questions about this educational project and the Mars rover content. Expand a question to read the answer.</p>
+
+      <details>
+        <summary>Who created this website?</summary>
+        <p>This site was created by John Gray as a student project for educational purposes. It is not affiliated with or endorsed by NASA.</p>
+      </details>
+
+      <details>
+        <summary>Where does the mission data and imagery come from?</summary>
+        <p>Images and mission data used on this site are adapted from NASA public-domain resources and mission archives when applicable. Sources are acknowledged where used.</p>
+      </details>
+
+      <details>
+        <summary>Can I reuse the images on this site?</summary>
+        <p>Most NASA mission imagery is in the public domain and may be reused with appropriate attribution. Third-party images may have restrictions — check the image caption or source for licensing details.</p>
+      </details>
+
+      <details>
+        <summary>Why does the site say NASA is not affiliated with this work?</summary>
+        <p>This is an independent student project. While the site uses public-domain NASA resources for educational purposes, NASA did not create, review, or endorse this website.</p>
+      </details>
+
+      <details>
+        <summary>How do I report a problem or typo?</summary>
+        <p>Click the <a href="#report" class="report-link">Report a problem</a> link in the footer to report issues. You can also email the site author if an address is provided.</p>
+      </details>
+
+      <details>
+        <summary>Is this content suitable for classroom use?</summary>
+        <p>Yes. The content is designed to be accessible and educational for students and instructors. If you plan to use this material in a classroom, feel free to adapt it with proper attribution.</p>
+      </details>
+
+    </section>
+
+    <!-- Interactive Q&A: Ask a question and receive an automated response -->
+    <section class="ask-section container" aria-labelledby="ask-heading">
+      <h2 id="ask-heading">Ask a Question</h2>
+      <p>If you have a question about the site or the missions, type it below. Answers are generated automatically by a simple site assistant (for demonstration only).</p>
+
+      <div id="faq-status" class="faq-status" aria-live="polite" role="status" style="margin-top:0.4rem;font-size:0.95rem;color:#333">Status: initializing…</div>
+
+      <form id="ask-form" class="ask-form" aria-label="Ask a question">
+        <label for="question-input" class="visually-hidden">Your question</label>
+        <textarea id="question-input" name="question" rows="3" placeholder="Type your question here..." required></textarea>
+        <div class="ask-actions">
+          <button type="submit" class="btn">Ask</button>
+          <button type="button" id="clear-qa" class="btn alt">Clear Q&amp;A</button>
+          <button type="button" id="debug-run" class="btn alt">Run test</button>
+        </div>
+      </form>
+
+      <div id="qa-feed" class="qa-feed" aria-live="polite" aria-relevant="additions"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <p class="small-print">Images and mission data adapted from NASA public domain resources where applicable.</p>
+    <div class="footer-bar">
+      <span>© 2025 John Gray</span>
+      <span class="separator">&nbsp;|&nbsp;</span>
+      <span><a href="contact.html" class="report-link">Report a problem</a></span>
+      <span class="separator">&nbsp;|&nbsp;</span>
+      <span>THIS WEBSITE WAS CREATED AS A STUDENT PROJECT FOR EDUCATIONAL PURPOSES. NASA IS NOT AFFILIATED WITH OR ENDORSED THIS WORK.</span>
+    </div>
+  </footer>
+
+  <script src="assets/js/faq.js" defer></script>
+
+</body>
+</html>

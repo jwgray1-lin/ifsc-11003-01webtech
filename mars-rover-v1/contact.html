@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Contact — Mars Rover Site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact the site author about the Mars Rover site or report issues.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body id="top">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="branding">
+      <img src="assets/img/nasa-logo.png" alt="NASA logo" class="logo">
+      <div class="title-group">
+        <h1>Contact — Mars Rover Site</h1>
+        <p class="tagline">Get in touch about the site or the missions</p>
+      </div>
+    </div>
+
+    <nav class="main-nav" role="navigation" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="mission-history.html">Mission History</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" class="site-main container" role="main">
+    <section aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact the Site Author</h2>
+      <p>If you found a problem, have a suggestion, or would like to ask about the content, please use the form below. Submitting will open your default mail client so you can send the message. If you prefer, copy the contact email: <strong>john.gray@example.com</strong>.</p>
+
+      <form id="contact-form" class="contact-form" novalidate>
+        <label for="contact-name">Your name</label>
+        <input id="contact-name" name="name" type="text" placeholder="Your name" required>
+
+        <label for="contact-email">Your email</label>
+        <input id="contact-email" name="email" type="email" placeholder="you@example.com" required>
+
+        <label for="contact-subject">Subject</label>
+        <input id="contact-subject" name="subject" type="text" placeholder="Short subject" required>
+
+        <label for="contact-message">Message</label>
+        <textarea id="contact-message" name="message" rows="6" placeholder="Write your message here" required></textarea>
+
+        <div class="form-actions">
+          <button type="submit" class="btn">Send</button>
+          <button type="reset" class="btn alt">Reset</button>
+        </div>
+      </form>
+
+      <div id="contact-status" class="contact-status" aria-live="polite" style="margin-top:0.6rem;color:#333"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <p class="small-print">Images and mission data adapted from NASA public domain resources where applicable.</p>
+    <div class="footer-bar">
+      <span>© 2025 John Gray</span>
+      <span class="separator">&nbsp;|&nbsp;</span>
+      <span><a href="contact.html" class="report-link">Report a problem</a></span>
+      <span class="separator">&nbsp;|&nbsp;</span>
+      <span>THIS WEBSITE WAS CREATED AS A STUDENT PROJECT FOR EDUCATIONAL PURPOSES. NASA IS NOT AFFILIATED WITH OR ENDORSED THIS WORK.</span>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      const form = document.getElementById('contact-form');
+      const status = document.getElementById('contact-status');
+      const contactEmail = 'john.gray@example.com'; // replace with real address if desired
+
+      function encodeMailto(params) {
+        const to = params.to;
+        const subject = encodeURIComponent(params.subject || '');
+        const body = encodeURIComponent(params.body || '');
+        return `mailto:${to}?subject=${subject}&body=${body}`;
+      }
+
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        const name = document.getElementById('contact-name').value.trim();
+        const email = document.getElementById('contact-email').value.trim();
+        const subject = document.getElementById('contact-subject').value.trim();
+        const message = document.getElementById('contact-message').value.trim();
+
+        if (!name || !email || !subject || !message) {
+          status.textContent = 'Please fill in all fields before sending.';
+          return;
+        }
+
+        const fullBody = `From: ${name} <${email}>\n\n${message}\n\n--\nSent from the Mars Rover site contact form.`;
+        const mailto = encodeMailto({ to: contactEmail, subject: subject, body: fullBody });
+
+        // Try to open the user's mail client. If blocked, show the mailto link.
+        try {
+          window.location.href = mailto;
+          status.textContent = 'Opening your mail client...';
+        } catch (err) {
+          status.innerHTML = `Could not open your mail client. Copy this address and message manually: <a href="${mailto}">${contactEmail}</a>`;
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>
