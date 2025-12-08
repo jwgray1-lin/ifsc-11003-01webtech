@@ -14,6 +14,51 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
+/* ===== Minimal Mars-toned Dark Mode accents (keep overall colors) ===== */
+/* Keep the original background; adjust only small accents */
+.dark-mode .site-header { border-bottom-color: #E86F2D; }
+.dark-mode .theme-toggle { border-color: #E86F2D; color: #E86F2D; }
+.dark-mode .theme-toggle:hover { background:#E86F2D; color:#051428; }
+.dark-mode .main-nav a:hover,
+.dark-mode .main-nav a[aria-current="page"] { background:#E86F2D; color:#051428; }
+
+/* Headings get a Mars accent */
+.dark-mode .rovers-overview h2,
+.dark-mode .program-goals h2,
+.dark-mode .rover-history h2,
+.dark-mode .mission-updates h2 { color:#E86F2D; }
+
+/* Buttons: keep base, just tweak border/shadow */
+.dark-mode .btn { border-color:#E86F2D; box-shadow: 0 6px 20px rgba(232,111,45,0.28); }
+.dark-mode .btn:hover { box-shadow: 0 10px 30px rgba(232,111,45,0.45); border-color:#F0935C; }
+
+/* Cards hover accent only */
+.dark-mode .rover-card:hover { border-color:#E86F2D; box-shadow: 0 12px 30px rgba(232,111,45,0.18); }
+
+/* Footer: keep background; allow link accent */
+.dark-mode .back-to-top { color:#E86F2D; }
+
+/* A bit more, still subtle */
+/* Hero: slight warm tint and softer divider in dark mode */
+.dark-mode .hero{
+	background: linear-gradient(135deg, rgba(232,111,45,0.10), rgba(244,164,96,0.06));
+	border-bottom: 2px solid rgba(232,111,45,0.20);
+}
+.dark-mode .hero-text h2{ color:#E86F2D; }
+
+/* Cards: gentle warm background + readable text accents */
+.dark-mode .rover-card{ background: linear-gradient(135deg, rgba(232,111,45,0.05), rgba(244,164,96,0.03)); }
+.dark-mode .rover-badge{ background:#E86F2D; color:#051428; }
+.dark-mode .rover-card h3{ color:#F4A460; }
+.dark-mode .rover-tagline{ color:#e9ded6; }
+.dark-mode .rover-facts dt{ color:#E86F2D; }
+.dark-mode .rover-facts dd{ color:#d9c6bb; }
+
+/* Updates list: mild warm wash */
+.dark-mode .update{ background: linear-gradient(135deg, rgba(244,164,96,0.08), rgba(232,111,45,0.05)); border-color: rgba(232,111,45,0.18); }
+.dark-mode .update h3{ color:#F4A460; }
+.dark-mode .update time{ color:#d2b7a3; }
+
 /* ===== HEADER ===== */
 .site-header {
 	background: transparent;
@@ -898,3 +943,53 @@ article.widget footer{ display:none; }
 .qa-item .meta{ margin-top:.4rem; font-size:.85rem; color:#9aa6b2 }
 
 .visually-hidden{ position:absolute !important; height:1px; width:1px; overflow:hidden; clip:rect(1px,1px,1px,1px); white-space:nowrap }
+
+/* ===== CONTACT (v1 look) ===== */
+.contact{ max-width: 920px; margin: 3rem auto; padding: 0 1.5rem; }
+.contact h2{ text-align:center; color: #FFB703; margin-bottom: 1rem; }
+.contact p{ text-align:center; color: #c9d4e0; }
+
+.contact-form {
+	background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+	border-radius: 14px;
+	box-shadow: 0 6px 32px rgba(2,6,23,0.18);
+	padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+	max-width: 480px;
+	margin: 2.5rem auto 1.5rem auto;
+	border: 1.5px solid rgba(255,255,255,0.06);
+	display: flex;
+	flex-direction: column;
+	gap: 1.1rem;
+}
+.contact-form label{
+	font-weight: 600;
+	margin-bottom: 0.2rem;
+	color: #7fd3ff;
+	letter-spacing: 0.02em;
+}
+.contact-form input,
+.contact-form textarea,
+.contact-form select{
+	width: 100%;
+	padding: 0.7rem 0.9rem;
+	border-radius: 7px;
+	border: 1.5px solid rgba(255,255,255,0.10);
+	background: rgba(255,255,255,0.04);
+	color: #e6eef6;
+	font-size: 1rem;
+	margin-bottom: 0.2rem;
+	transition: border-color 0.18s, box-shadow 0.18s;
+	box-sizing: border-box;
+}
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus{
+	outline: none;
+	border-color: #FFB703;
+	box-shadow: 0 0 0 2px #FFB70344;
+}
+.contact-form textarea{ min-height: 120px; resize: vertical; }
+.form-actions{ display:flex; gap:.7rem; justify-content:flex-end; margin-top:.5rem; }
+.contact-status{ min-height:1.2em; font-size:1.05rem; text-align:center; margin-top:1.1rem; color:#c9d4e0 }
+
+@media (max-width:640px){ .contact-form{ padding: 1.2rem; } }
